@@ -26,6 +26,9 @@ class GitHubApi567(unittest.TestCase):
     def test2_commits(self):
         self.assertEqual(0, get_repo_commits("Viyeta")['for-commit-check'])
 
+    def test3_commits(self):
+        self.assertEqual(9, get_repo_commits("Viyeta")['Triangle-SSW567'])
+
 
 if __name__ == "__main__":
     unittest.main(exit=False, verbosity=2)
