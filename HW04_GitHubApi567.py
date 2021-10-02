@@ -61,11 +61,12 @@ def http_get_request(url: str) -> Response:
 
 
 def main():
-    """ main function"""
-    user_id = input('Enter Your GitHub username:')
+    user_id = input('GitHub User ID: ')
+    repo_list = get_repos(user_id)
+    repo_commits_dict = get_repo_commits(user_id)
+    for repo in repo_list:
+        print('Repo: ' + repo + '; Number of commits: ' + str(repo_commits_dict[repo]))
 
-    github_id(user_id)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
