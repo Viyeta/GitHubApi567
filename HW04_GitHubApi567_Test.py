@@ -26,14 +26,14 @@ def mocked_requests_get(*args, **kwargs):
             return self.json_data
 
     root_dir = os.path.dirname(__file__)
-    with open(os.path.join(root_dir, "json\\Viyeta_repos.json"), "r") as file:
+    with open(os.path.join(root_dir, "json/Viyeta_repos.json"), "r") as file:
         data = file.read()
     if args[0] == 'https://api.github.com/users/Viyeta/repos':
         return MockResponse(data, 200)
 
     splits = args[0].split('/')
     if len(splits) == 7 and splits[3] == 'repos':
-        with open(os.path.join(root_dir, "json\\Viyeta_" + splits[5] + "_commits.json"), "r") as file2:
+        with open(os.path.join(root_dir, "json/Viyeta_" + splits[5] + "_commits.json"), "r") as file2:
             data2 = file2.read()
             return MockResponse(data2, 200)
 
