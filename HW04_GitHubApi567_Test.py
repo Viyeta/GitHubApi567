@@ -33,7 +33,7 @@ def mocked_requests_get(*args, **kwargs):
 
     splits = args[0].split('/')
     if len(splits) == 7 and splits[3] == 'repos':
-        with open(os.path.join(root_dir, "json/Viyeta_" + splits[5] + "_commits.json"), "r") as file2:
+        with open(os.path.join(root_dir, "json\\Viyeta_" + splits[5] + "_commits.json"), "r") as file2:
             data2 = file2.read()
             return MockResponse(data2, 200)
 
